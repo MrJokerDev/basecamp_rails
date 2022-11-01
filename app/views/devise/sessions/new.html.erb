@@ -1,0 +1,46 @@
+<!-- Section: Design Block -->
+<section class="mt-5 m-5">
+  <!-- Jumbotron -->
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start rounded" style="background-color: hsl(0, 0%, 96%)">
+  <h1 class="text-center mb-4">Sing in</h1>
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0 m-auto">
+          <div class="card shadow">
+            <div class="card-body py-5 px-md-5">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email address" %>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                  <%= f.check_box :remember_me, class: "form-check-input me-2" %>
+                  <%= f.label :remember_me, class: "form-check-label" %>
+                </div>
+
+                <!-- Submit button -->
+                <%= f.submit "Log in", data: {turbo: false}, class: "btn btn-primary btn-block mb-4 w-100" %>
+                <div>
+                  <%= render "devise/shared/links" %>
+                </div>
+
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->

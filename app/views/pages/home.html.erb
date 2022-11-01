@@ -1,0 +1,20 @@
+
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem; background-color: #508bfc;">
+          <div class="card-body p-5 text-center d-flex m-auto">
+            <% if current_user %>
+                <%= link_to 'Dashboard', projects_path, class: "btn btn-lg btn-block btn-warning m-2" %>
+                <%=  button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-lg btn-block btn-danger m-2" %>
+            <% else %>
+                <%= link_to 'Login', new_user_session_path, class: "btn btn-lg btn-block btn-success m-2" %>
+                <%= link_to 'Register', new_user_registration_path, class: "btn btn-lg btn-block btn-secondary m-2" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

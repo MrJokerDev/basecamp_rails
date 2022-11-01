@@ -1,0 +1,21 @@
+<%= render 'navbar/navbar' %>
+<h1>Edit project</h1>
+
+<%= link_to 'Back', projects_path, :class => "card-link btn btn-secondary mt-3 mb-3" %>
+
+<%= form_for @project, :html => {:class => "form-horizontal"} do |f| %>
+      <div class="form-group">
+        <%= f.label :title, "Title:", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :body, "Descptions:", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :body, class: "form-control" %>
+        </div>
+      </div>
+
+      <%= f.submit "Submit", class: "btn btn-default btn-primary mt-3" %>
+ <% end %>

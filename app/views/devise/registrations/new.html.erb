@@ -1,0 +1,47 @@
+<!-- Section: Design Block -->
+<section class="mt-5 m-5">
+  <!-- Jumbotron -->
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start rounded" style="background-color: hsl(0, 0%, 96%)">
+  <h1 class="text-center mb-4">Register</h1>
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0 m-auto">
+          <div class="card shadow">
+            <div class="card-body py-5 px-md-5">
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email address" %>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "New password" %>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <%= f.password_field :password_confirmation, autocomplete: "current-password", class: "form-control", placeholder: "Reset password" %>
+                </div>
+
+                <!-- Submit button -->
+                <%= f.submit "Log in", data: {turbo: false}, class: "btn btn-primary btn-block mb-4 w-100" %>
+                <div>
+                  <%= render "devise/shared/links" %>
+                </div>
+
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
