@@ -1,1 +1,27 @@
+<%= render 'navbar/navbar' %>
 <h1>New User</h1>
+
+<%= link_to 'Back', projects_path, :class => "card-link btn btn-secondary mt-3 mb-3" %>
+
+<%= form_for @user, :html => {:class => "form-horizontal"} do |f| %>
+      <div class="form-group">
+        <%= f.label :email, "Email:", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :password, "Password:", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_field :password, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :role, "User Role:", class: "col-md-4 control-label mb-3" %>
+        <div class="col-md-6">
+          <%= f.select :role, options_for_select(User.roles.keys.to_a, params[:role]), {}, class: 'form-select' %>
+        </div>
+      </div>
+
+      <%= f.submit "Submit", class: "btn btn-default btn-primary mt-3" %>
+ <% end %>
