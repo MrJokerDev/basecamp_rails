@@ -1,9 +1,9 @@
 <%= render 'navbar/navbar' %>
 
 <h1>Users</h1>
-
-<%= link_to 'Create user', new_user_path, :class => "card-link btn btn-success mt-3 mb-3" %>
-
+<% if current_user.admin? %>
+  <%= link_to 'Create user', new_user_path, :class => "card-link btn btn-success mt-3 mb-3" %>
+<% end %>
 <table class="table table-striped table-hover">
   <thead>
     <tr>

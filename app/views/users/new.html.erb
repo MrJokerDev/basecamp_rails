@@ -2,7 +2,7 @@
 <h1>New User</h1>
 
 <%= link_to 'Back', projects_path, :class => "card-link btn btn-secondary mt-3 mb-3" %>
-
+<% if current_user.admin? %>
 <%= form_for @user, :html => {:class => "form-horizontal"} do |f| %>
       <div class="form-group">
         <%= f.label :email, "Email:", class: "col-md-4 control-label" %>
@@ -24,4 +24,5 @@
       </div>
 
       <%= f.submit "Submit", class: "btn btn-default btn-primary mt-3" %>
+ <% end %>
  <% end %>
